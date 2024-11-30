@@ -1,125 +1,108 @@
-*{
-  margin:0;
+* {
+  margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  font-family: 'Arial', sans-serif;
-  margin: 0;
-  padding: 0;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  transition: background-color 2s, color 2s;
-  color: black;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background-color: #f5f5f5;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+.hero-image {
+  background-color: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 25px;
+  color: #333;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+video {
+  width: 640px;
+  height: 480px;
+  border-radius: 8px;
+  margin-bottom: 25px;
+  background-color: #f8f8f8;
+  border: 1px solid #eaeaea;
+}
 
 button {
+  background-color: #007bff;
   color: white;
-  background-color: steelblue;
-  border-radius: 35px;
-  width: 70px;
-  height: 35px;
-
+  border: none;
+  padding: 10px 24px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  margin: 0 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  width: auto;
+  height: auto;
 }
-
-
 
 button:hover {
-  animation: bubble 3s infinite ease-in-out;
-  background-color: green;
-  border-radius:35px;
-  box-shadow:0 0 30px black;
+  background-color: #0056b3;
 }
-
-@media only screen and (max-width: 1200px) {
-  /* Common styles for all screen sizes */
-
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: 'Arial', sans-serif;
-  margin: 0;
-  padding: 0;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  transition: background-color 2s, color 2s;
-  color: black;
-}
-
-}
-
 
 /* Responsive Design */
-@media only screen and (max-width: 786px) {
-  .header {
-      flex-direction: column;
-      align-items: center;
-      padding: 10px;
+@media only screen and (max-width: 768px) {
+  .hero-image {
+      margin: 15px;
+      padding: 20px;
   }
 
-  .menu {
-      flex-direction: column;
-      align-items: center;
-      
+  video {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
   }
 
-  .search-container {
-      margin-left: 0;
-      margin-top: 10px; /* Adjust margin for spacing */
+  h1 {
+      font-size: 20px;
   }
 
-  #search {
-      width: 100%; /* Make the search input full width */
-  }
-
-  .mode-switcher {
-      margin-left: 0;
-      margin-top: 10px;
-  }
-  .hero{
-      display: inline;
-  }
-
-  .hero-image{
-      max-width: 100%; /* Ensure image fits within its container */
-      height: auto; /* Maintain aspect ratio */
-      border-radius: 10px;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-      justify-content: center;
-  }
-
-  .hero-content h1 {
-      font-size: 1.5em;
-      text-align: center;
-  }
-  .hero-content h2{
-      margin: 20px 10px;
-
-  }
-  
-
-  .hero-content p {
-      font-size: 1em;
-      text-align: center; /* Adjust font size for paragraphs */
-  }
-
-  
-
-  body {
-      font-family: 'Arial', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      transition: background-color 2s, color 2s;
-      color: black;
+  button {
+      padding: 8px 20px;
+      font-size: 13px;
   }
 }
 
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+  body {
+      background-color: #1a1a1a;
+  }
+
+  .hero-image {
+      background-color: #2d2d2d;
+  }
+
+  h1 {
+      color: #ffffff;
+  }
+
+  video {
+      background-color: #1a1a1a;
+      border-color: #3d3d3d;
+  }
+
+  button {
+      background-color: #0066cc;
+  }
+
+  button:hover {
+      background-color: #0052a3;
+  }
+}
